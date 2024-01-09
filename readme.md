@@ -58,6 +58,8 @@ kubectl port-forward svc/metaplanesvc 8080:8080
 ```
 É necessário ter um cluster kubernetes rodando localmente, uma sugestão é utilizar o [kind](https://kind.sigs.k8s.io/)
 
+É necessário ter o `kubectl` instalado para executar os comandos: [kubectl](https://kubernetes.io/pt-br/docs/tasks/tools/)
+
 ### Acessando via GKE
 
 Para acessar a aplicação via o Google Kubernetes Engine (GKE)
