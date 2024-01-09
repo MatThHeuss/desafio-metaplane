@@ -56,6 +56,7 @@ execute o comando abaixo:
 ```shell
 kubectl port-forward svc/metaplanesvc 8080:8080
 ```
+É necessário ter um cluster kubernetes rodando localmente, uma sugestão é utilizar o [kind](https://kind.sigs.k8s.io/)
 
 ### Acessando via GKE
 
