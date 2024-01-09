@@ -76,7 +76,7 @@ make test
 
 ### Endpoints
 
-#### /saveLists
+#### /savelists
 
 Endpoint utilizado para salvar as listas que serão mergeadas.
 Exemplo de requisição:
