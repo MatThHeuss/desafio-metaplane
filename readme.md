@@ -88,6 +88,7 @@ curl --location 'http://localhost:8080/savelists' \
     "numbers": [1, 2, 4]
 }'
 ```
+O Código aceita no máximo duas listas
 
 ```curl
 curl --location 'http://34.151.225.187/savelists' \
@@ -112,3 +113,5 @@ Exemplo de requisição:
 curl --location --request POST 'http://34.151.225.187/merge' \
 --data ''
 ```
+Após feito o merge, as listas são apagadas da memória para que possa ser
+realizado vários testes.
