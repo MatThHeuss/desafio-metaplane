@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metaplane
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: metaplane
+  template:
+    metadata:
+      labels:
+        app: metaplane
+    spec:
+      containers:
+        - name: metaplane
+          image: matheussalencar/desafio-metaplane:latest
+          resources:
+            limits:
+              memory: "32Mi"
+              cpu: "100m"
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            periodSeconds: 10
+            failureThreshold: 10
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            periodSeconds: 10
+            failureThreshold: 2
+            timeoutSeconds: 5
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            periodSeconds: 10
+            failureThreshold: 3
+            timeoutSeconds: 5
+            successThreshold: 1
+
+          ports:
+            - containerPort: 8080
