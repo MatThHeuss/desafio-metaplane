@@ -108,7 +108,7 @@ func TestHandlers(t *testing.T) {
 		assert.Contains(t, rr.Body.String(), "Need at least two lists to merge", "Should contain error message")
 	})
 
-	t.Run("", func(t *testing.T) {
+	t.Run("Should return 200 Ok when verify application health", func(t *testing.T) {
 		// Arrange
 		req, _ := http.NewRequest("GET", "/health", nil)
 		rr := httptest.NewRecorder()
